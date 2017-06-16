@@ -10,3 +10,10 @@
 - define ('DB_NAME', 'your-db');
 - define ('TABLE', 'tours_2017fantasypride');
 
+2. Anpassen der page-tours .... (zum Test einige Elemente hinzugefügt)
+
+- Entfernen container-div
+- Entfernen bootstrap css
+- Entfernen Body-Tags
+
+
