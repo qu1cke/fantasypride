@@ -1,17 +1,33 @@
-
-
-
-
 <html lang="de" ng-app="registrationApp" ng-controller="MainCtrl">
 
 
+<head> <!-- entfernen! -->
+    <meta charset="utf-8"> <!-- entfernen! -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- entfernen! -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- entfernen! -->
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Bootstrap --> <!-- entfernen! -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- jQuery -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <!-- angularjs -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
 
 
-<!-- GalleryDay -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+<body> <!-- entfernen! -->
+
+<div class="container"> <!-- entfernen! -->
+
 <div class="row">
 	<div class="col-md-12">
 		<div class="cat-blocks">
@@ -55,7 +71,7 @@
     	<!-- Form Name -->
     	<legend>Ich bin dabei!</legend>
 
-    	<!-- Text input-->
+    	<!-- Vorname -->
     	<div class="form-group">
     	  <label class="col-md-2 control-label" for="firstName1">Vorname</label>  
     	  <div class="col-md-4">
@@ -64,7 +80,7 @@
     	  </div>
     	</div>
 
-    	<!-- Text input-->
+    	<!-- Nachname -->
     	<div class="form-group">
     	  <label class="col-md-2 control-label" for="lastName1">Nachname</label>  
     	  <div class="col-md-4">
@@ -73,7 +89,7 @@
     	  </div>
     	</div>
 
-    	<!-- Text input-->
+    	<!-- E-Mail -->
     	<div class="form-group">
     	  <label class="col-md-2 control-label" for="email1">E-Mail</label>  
     	  <div class="col-md-4">
@@ -82,7 +98,7 @@
     	  </div>
     	</div>
 
-    	<!-- Text input-->
+    	<!-- Telefon -->
     	<div class="form-group">
     	  <label class="col-md-2 control-label" for="phone1">Handynummer</label>  
     	  <div class="col-md-4">
@@ -91,7 +107,21 @@
     	  </div>
     	</div>
 
-    	<!-- Textarea -->
+        <!-- Ticket -->
+        <div class="form-group">
+          <label class="col-md-2 control-label" for="ticket">Eintrittsticket</label>  
+          <div class="col-md-4">
+        
+            <label class="checkbox-inline" for="ticket">
+            <input name="ticket" id="ticket" value="1" type="checkbox">
+                Eintrittsticket dazubuchen
+            </label>
+
+          <span class="help-block">Möchtest Du zusätzlich ein Eintrittsticket buchen?</span>  
+          </div>
+        </div>
+
+    	<!-- Kommentare -->
     	<div class="form-group">
     	  <label class="col-md-2 control-label" for="comment">Kommentare und Anmerkungen</label>
     	  <div class="col-md-4">                     
@@ -125,6 +155,11 @@
     	                <label for="inputFriendLastName" class="col-md-1 control-label"></label>
     	                <input type="text" class="form-control col-md-2" id="inputFriendPhoneNumber" placeholder="Handynummer" ng-model="member.phone"/>
     	            </div>
+                    <div class="form-group">
+                        <label for="inputFriendTicket" class="col-md-1 control-label checkbox-inline"></label>
+                        <input name="inputFriendTicket" id="ticket" value="1" type="checkbox" ng-model="member.ticket">
+                        Ticket
+                    </div>
     	            <div class ="form-group" ng-show="$last">
     	           		<label for="addMember" class="col-md-1 control-label"></label>
     	        		<button id="addMember" name="addMember" class="form-control col-md-1 btn btn-success" ng-click="addNewMember()">+</button>
@@ -154,6 +189,8 @@
     	<!-- end form -->
     	</form>
     	</div>
+</body> <!-- entfernen! -->
+</div><!-- entfernen! -->
 
 	<script type="text/javascript">
 	
@@ -188,7 +225,7 @@
                 }
   				  
                 $.each($scope.members, function(index, val) {
-                     val.eventid = "FP-2016";
+                     val.eventid = "FP-2017";
                      val.registered = new Date();
                 });
 
@@ -224,6 +261,6 @@
 	
     <!-- bootstrap -->
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
    </html>
