@@ -30,11 +30,12 @@
         $mFirstName = $member['firstname'];
         $mLastName = $member['lastname'];
         if(isset($member['email'])){$mEmail = $member['email'];}else{$mEmail="";};
+        if(isset($member['ticket'])){$mTicket = $member['ticket'];}else{$mTicket=0;};
         $mPhone = $member['phone'];
         if(isset($member['comment'])){$mComment = $member['comment'];}else{$mComment="";};
 
-        $sql = "INSERT INTO ".TABLE."(id,registered,eventid,firstname,lastname,email,phone,comment)
-        VALUES('$mId','$mRegistered','$mEventId','$mFirstName','$mLastName','$mEmail','$mPhone','$mComment')";
+        $sql = "INSERT INTO ".TABLE."(id,registered,eventid,firstname,lastname,email,phone,comment,ticket)
+        VALUES('$mId','$mRegistered','$mEventId','$mFirstName','$mLastName','$mEmail','$mPhone','$mComment','$mTicket')";
         if ($conn->query($sql) === TRUE) {
             echo "Neuer Teilnehmer: $mFirstName $mLastName\n";
         } else {
